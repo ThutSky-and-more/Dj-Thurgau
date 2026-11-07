@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100e0d">
+  <title>Booking &amp; Kontakt | DJ Thurgau</title>
+  <meta name="description" content="Frag einen DJ-Termin für euer Vereinsfest, eure Schulparty, euer Dorffest oder eine private Feier an.">
+  <meta property="og:title" content="Booking &amp; Kontakt | DJ Thurgau">
+  <meta property="og:description" content="Frag einen DJ-Termin für euer Vereinsfest, eure Schulparty, euer Dorffest oder eine private Feier an.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_CH">
+  
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/open-sans-CondBold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt</a>
+  <header class="site-header">
+    <div class="wrap topbar">
+      <a class="brand" href="index.html" aria-label="DJ Thurgau – Startseite"><img src="assets/mark.svg" width="36" height="36" alt=""><span><span class="brand-name">DJ Thurgau</span><span class="brand-note">Open Format DJ</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" hidden><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menü</button>
+      <nav class="site-nav" id="navigation" aria-label="Hauptnavigation">
+        <a class="nav-link" href="index.html">Start</a>
+        <a class="nav-link" href="events.html">Events</a>
+        <a class="nav-link" href="sound-setup.html">Sound &amp; Setup</a>
+        <a class="nav-link" href="galerie.html">Galerie</a>
+        <a class="nav-link nav-booking" href="kontakt.html" aria-current="page">Booking</a>
+      </nav>
+      <a class="button button-primary header-action" href="kontakt.html" aria-current="page">Booking<svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M8 6h10v10"/></svg></a>
+    </div>
+  </header>
+
+  <main id="inhalt" tabindex="-1">
+<section class="booking-page" aria-labelledby="booking-title">
+      <div class="wrap booking-layout">
+        <div class="booking-intro">
+          <p class="kicker"><span class="serial" aria-hidden="true">04 /</span>Booking</p>
+          <h1 class="display page-title" id="booking-title"><span>Erzähl mir von</span><strong>deinem Event.</strong></h1>
+          <p class="lede">Schick mir ein paar Eckdaten. Ich melde mich per E-Mail, damit wir Verfügbarkeit, Musik, Technik und Gage klären können.</p>
+        </div>
+
+        <form class="booking-form" id="dj-booking" name="dj-booking" method="POST" action="/danke/" data-netlify="true" netlify-honeypot="bot-field" data-booking aria-labelledby="form-heading">
+          <div class="form-head">
+            <h2 id="form-heading">Booking-Anfrage</h2>
+            <p class="required-note">* Pflichtfeld</p>
+          </div>
+          <p hidden id="form-status" class="form-note" role="status">Das Booking-Formular ist noch nicht freigeschaltet.</p>
+          <p class="honeypot" hidden><label>Dieses Feld bitte leer lassen <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="fields">
+            <div class="field">
+              <label for="name">Name <span aria-hidden="true">*</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required>
+            </div>
+            <div class="field">
+              <label for="email">E-Mail <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+            </div>
+            <div class="field">
+              <label for="anlass">Anlass <span aria-hidden="true">*</span></label>
+              <select id="anlass" name="anlass" required>
+                <option value="" selected>Bitte wählen</option>
+                <option value="Vereinsfest">Vereinsfest</option>
+                <option value="Schulparty">Schulparty</option>
+                <option value="Dorffest">Dorffest</option>
+                <option value="Private Feier">Private Feier</option>
+                <option value="Anderer Anlass">Anderer Anlass</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ort">Ort oder Region <span aria-hidden="true">*</span></label>
+              <input id="ort" name="ort" type="text" placeholder="z. B. Frauenfeld" maxlength="120" required>
+            </div>
+            <div class="field">
+              <label for="datum">Datum</label>
+              <input id="datum" name="datum" type="date">
+            </div>
+            <div class="field">
+              <label for="gaeste">Anzahl Gäste</label>
+              <input id="gaeste" name="gaeste" type="number" min="1" step="1" inputmode="numeric" placeholder="ungefähr">
+            </div>
+            <div class="field field-wide">
+              <label for="nachricht">Weitere Infos</label>
+              <textarea id="nachricht" name="nachricht" maxlength="3000" rows="4" placeholder="z. B. Spielzeit, Location, Musikrichtung oder vorhandene Technik"></textarea>
+            </div>
+          </div>
+          <p class="form-privacy" id="form-privacy">Ich verwende deine Angaben, um dir zu antworten und den Anlass mit dir zu planen. <a href="datenschutz.html">Datenschutz</a></p>
+          <button class="button button-primary" type="submit" aria-describedby="form-privacy">Anfrage senden<svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M8 6h10v10"/></svg></button>
+        </form>
+        <ul class="booking-points">
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></svg><span><strong>Einsatzgebiet</strong><br>Thurgau und weitere Orte nach Absprache</span></li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg><span><strong>Datum noch offen?</strong><br>Du kannst auch ohne festes Datum anfragen.</span></li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v16m7-16v16m7-16v16M2.5 8h5m2 7h5m2-5h5"/></svg><span><strong>Musikwünsche</strong><br>Lieblingssongs, Genres und Songvorgaben sind willkommen.</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <a class="brand" href="index.html" aria-label="DJ Thurgau – Startseite"><img src="assets/mark.svg" width="36" height="36" alt=""><span><span class="brand-name">DJ Thurgau</span><span class="brand-note">Open Format DJ</span></span></a>
+        <nav class="footer-nav" aria-label="Weitere Links">
+          <a href="events.html">Events</a>
+          <a href="sound-setup.html">Sound &amp; Setup</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="kontakt.html">Booking</a>
+        </nav>
+      </div>
+      <div class="footer-low">
+        <span>DJ Thurgau · Thurgau, Schweiz</span>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
