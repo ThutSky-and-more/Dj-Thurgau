@@ -1,2 +1,5 @@
 [build]
-  publish = "."
+  publish = "dist"
+
+[build.processing.html]
+  pretty_urls = false
